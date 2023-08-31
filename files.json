@@ -1,0 +1,12 @@
+{ 
+    "files" : [
+
+        "index.md", 
+        {
+            "name" : "folder", 
+            "content" : [] 
+            
+        }, 
+        "second file.md" 
+    ]
+}
