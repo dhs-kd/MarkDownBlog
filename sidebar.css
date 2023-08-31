@@ -24,9 +24,10 @@
   
   /* The navigation menu links */
   #navbar a {
-    padding: 8px 8px 8px 32px;
+    padding:0.1rem;
+    padding-left: 1rem;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #000000;
     display: block;
     transition: 0.3s;

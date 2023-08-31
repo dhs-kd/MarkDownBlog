@@ -1,6 +1,6 @@
 var open_nav_bar = true ; 
 function openNav() {
-    document.getElementById("navbar").style.width = "25rem";
+    document.getElementById("navbar").style.width = "20rem";
     document.getElementById("body").style.marginLeft = "0px";
 }
   
