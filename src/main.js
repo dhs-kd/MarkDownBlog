@@ -1,5 +1,5 @@
 
-
+// To open .md files and convert them to HTML files
 function open_md(entry){ 
     fetch(`./pages/${entry}` )
         .then((res) => res.text())
@@ -12,7 +12,22 @@ function open_md(entry){
         .catch((e) => console.error(e));
 }
 
+// To handle tree opening and closing
+function showChildren(folder) {
+    for (let page of document.getElementsByClassName(folder)) {
+        if(page.style.display == "none") {    
+            page.style.display = "block"
+            document.getElementById(folder.replaceAll(" ", "")).innerHTML = `<a href="#" onclick=showChildren("${folder}")>${folder}         <i class="fa-solid fa-circle-chevron-up"></i></a>`
 
+        }
+        else if(page.style.display == "block") {
+            page.style.display == "none"
+            document.getElementById(folder.replaceAll(" ", "")).innerHTML = `<a href="#" onclick=showChildren("${folder}")>${folder}         <i class="fa-solid fa-circle-chevron-down"></i></a>`
+        }
+    }
+}
+
+// Rendering
 window.onload = function () {
     fetch("./pages/index.md")
         .then((res) => res.text())
@@ -38,7 +53,11 @@ window.onload = function () {
                         document.getElementById("navbar").innerHTML +=`<a herf="#" onclick='open_md("${entry}")'>${entry}</a>`;
                     }
                     else if (typeof entry === "object"){ 
-
+                        document.getElementById("navbar").innerHTML += `<span id="${entry["name"].replaceAll(" ", "")}"><a href="#" onclick=showChildren("${entry.name}")>${entry.name}         <i class="fa-solid fa-circle-chevron-down"></i></a></span>`
+                        document.getElementById("navbar").innerHTML += `<table>`
+                        for(let page of entry.content) {
+                            document.getElementById("navbar").innerHTML +=`<tr><a herf="#" class="${entry.name}" style="display:none" onclick='open_md("${entry.name}/${page}")'>${page}</a></tr>`;
+                        }
                     }
                 }
             })
