@@ -56,7 +56,7 @@ window.onload = function () {
                         document.getElementById("navbar").innerHTML += `<span id="${entry["name"].replaceAll(" ", "")}"><a href="#" onclick=showChildren("${entry.name}")>${entry.name}         <i class="fa-solid fa-circle-chevron-down"></i></a></span>`
                         document.getElementById("navbar").innerHTML += `<table>`
                         for(let page of entry.content) {
-                            document.getElementById("navbar").innerHTML +=`<tr><a herf="#" class="${entry.name}" style="display:none" onclick='open_md("${entry.name}/${page}")'>${page}</a></tr>`;
+                            document.getElementById("navbar").innerHTML +=`<tr><a herf="#" class="${entry.name}" style="display:none; padding-left:2rem;" onclick='open_md("${entry.name}/${page}")'>${page}</a></tr>`;
                         }
                     }
                 }
