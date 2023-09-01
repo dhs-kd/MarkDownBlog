@@ -32,7 +32,7 @@
   
   /* The navigation menu links */
   #navbar a {
-    padding:0.3rem;
+    padding:0.2rem;
     text-decoration: none;
     font-size: 1.3rem;
     color: #000000;
@@ -44,6 +44,14 @@
   #navbar a:hover {
     color: #74bbf1;
   }
+
+  #navBarList { 
+    list-style: none;
+    font-size: 1.3rem;
+
+  }
+
+
   /* Style the caret/arrow */
 .caret {
   cursor: pointer;
@@ -52,15 +60,12 @@
 
 /* Create the caret/arrow with a unicode, and style it */
 .caret::before {
-  content: "\25B6";
-  color: black;
   display: inline-block;
   margin-right: 6px;
 }
 
-/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
-.caret-down::before {
-  transform: rotate(90deg);
+.caret:hover {
+  color: #74bbf1;
 }
 
 /* Hide the nested list */

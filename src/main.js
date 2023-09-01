@@ -1,9 +1,7 @@
 
 // To open .md files and convert them to HTML files
 function open_md(entry) {
-    var path ; //TODO 
-
-    fetch(`./pages/${entry}`)
+    fetch(`${entry}`)
         .then((res) => res.text())
         .then((t) => {
             var converter = new showdown.Converter();
@@ -14,20 +12,6 @@ function open_md(entry) {
         .catch((e) => console.error(e));
 }
 
-// To handle tree opening and closing
-function showChildren(folder) {
-    for (let page of document.getElementsByClassName(folder)) {
-        if (page.style.display == "none") {
-            page.style.display = "block"
-            document.getElementById(folder.replaceAll(" ", "")).innerHTML = `<a href="#" onclick=showChildren("${folder}")>${folder}\xA0\xA0<i class="fa-solid fa-circle-chevron-up"></i></a>`
-
-        }
-        else if (page.style.display == "block") {
-            page.style.display = "none"
-            document.getElementById(folder.replaceAll(" ", "")).innerHTML = `<a href="#" onclick=showChildren("${folder}")>${folder}\xA0\xA0<i class="fa-solid fa-circle-chevron-down"></i></a>`
-        }
-    }
-}
 
 // Rendering
 window.onload = function () {
@@ -41,27 +25,24 @@ window.onload = function () {
         .catch((e) => console.error(e));
 
     
-    
-        fetch("./files.json")
-            .then(res => res.json())
-            .then(files => {
-                console.log(files)
-                var list = files["files"];
-                create_folders(list);
-            })
-            .then( ()=>{ 
-                var toggler = document.getElementsByClassName("caret");
-        var i;
-        for (i = 0; i < toggler.length; i++) {
-            toggler[i].addEventListener("click", function() {
-                this.parentElement.querySelector(".nested").classList.toggle("active");
-                this.classList.toggle("caret-down");
-            });
-        }
-        console.log(toggler)
 
-            })
-            .catch(e => console.log(e));
+    fetch("./files.json")
+        .then(res => res.json())
+        .then(files => {
+            console.log(files)
+            var list = files["files"];
+            create_folders(list);
+        })
+        .then( ()=>{ 
+            var toggler = document.getElementsByClassName("caret");
+            var i;
+            for (i = 0; i < toggler.length; i++) {
+                toggler[i].addEventListener("click", function() {
+                    this.parentElement.querySelector(".nested").classList.toggle("active");
+                });
+            }
+        })
+        .catch(e => console.log(e));
 
 
 
@@ -74,11 +55,11 @@ function create_folders(list) {
     var path = "./pages/"
     for (var entry of list) {
         if (typeof entry === "string") {
-
-            document.getElementById("navBarList").innerHTML += create_file(entry);
+            document.getElementById("navBarList").innerHTML += create_file(entry , path);
         }
+
         else if (typeof entry === "object") {
-            document.getElementById("navBarList").innerHTML  += create_folder(entry)
+            document.getElementById("navBarList").innerHTML  += create_folder(entry ,path)
 
         }
     }
@@ -86,26 +67,28 @@ function create_folders(list) {
 }
 
 
-function create_file(name) {
-    var html = `<li><a herf="#" id='${name}' onclick='open_md("${name}")'>${name}</a></li>`
+function create_file(name , path) {
+    var html = `<li><a herf="#" onclick='open_md("${path}${name}")'>${name}</a></li>`
     return html ;
 }
 
-function create_folder(object) {
+function create_folder(object , p) {
     var name = object["name"];
     var list = object["content"];
 
+    var path = p +`${name}/` ; 
+    
     var entries = "";
     for ( var li of list){ 
         if (typeof li === "string") {
-            entries += create_file(li);
+            entries += create_file(li , path);
         }
         else if (typeof li === "object") {
-           entries +=  create_folder(li);
+           entries +=  create_folder(li , path);
         }
     }
     var html = 
-    `<li><span class="caret">${name}</span>
+    `<li><span class="caret"><i class="fa-solid fa-folder"></i>\xA0 ${name}</span>
         <ul class="nested">
         ${entries}
         </ul></li>` ;

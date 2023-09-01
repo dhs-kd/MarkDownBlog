@@ -12,7 +12,7 @@
         }, 
         {
             "name" : "folder", 
-            "content" : ["reductaise.md" , "test1.md" , " test2.md", 
+            "content" : ["reductaise.md" , "test1.md" , "test2.md", 
                 { "name" :"subfolder" , "content" :["file1.md"] }
             
             ] 
