@@ -21,7 +21,7 @@ function showChildren(folder) {
 
         }
         else if(page.style.display == "block") {
-            page.style.display == "none"
+            page.style.display = "none"
             document.getElementById(folder.replaceAll(" ", "")).innerHTML = `<a href="#" onclick=showChildren("${folder}")>${folder}         <i class="fa-solid fa-circle-chevron-down"></i></a>`
         }
     }
