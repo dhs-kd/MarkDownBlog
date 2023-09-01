@@ -9,20 +9,35 @@
     <link rel="stylesheet" href="sidebar.css">
     <script src="https://kit.fontawesome.com/4044e4fe18.js" crossorigin="anonymous"></script>
     <script src="./src/showdown.min.js"></script>
-    <script src="./src/main.js"></script>
     <script src="src/utils.js"></script>
-
+    <script src="./src/main.js"></script>
+    
 </head>
 <body >
+    <script>  
+    var toggler = document.getElementsByClassName("caret");
+        var i;
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function() {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+        console.log(toggler)
+
+    </script>
     
     <div id="navbar">
+        <ul id="navBarList">
+        </ul>
+        
     </div>
     
-    <a href="javascript:void(0)" onclick="navbar()" id="navBut" > <i class="fas fa-bars"></i></a>
+    <a href="javascript:void(0)" onclick="navbar()" id="navBut" > <i class="fas fa-bars" id="navButIcon"></i></a>
     <div id="body">
     </div>
-
-
+    
+    
 </body>
 </html>
 

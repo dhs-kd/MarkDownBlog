@@ -6,14 +6,18 @@
     left: 1rem;
     position: fixed;
     display: block;
-    padding: 0.1rem 0.3rem;
+    padding: 0.3rem 0.5rem;
     background:#fafafa ;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#navButIcon{ 
+  font-size: 2rem;
+}
  /* The side navigation menu */
  #navbar {
-    height: 100%; /* 100% Full-height */
+    height: 100%; /* 100%    <a href="javascript:void(0)" onclick="navbar()" id="navBut" > <i class="fas fa-bars"></i></a>
+    Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
@@ -21,17 +25,16 @@
     left: 0;
     background-color: #fafafa; /* white*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 5rem; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   /* The navigation menu links */
   #navbar a {
-    padding:0.1rem;
-    padding-left: 1rem;
+    padding:0.3rem;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #000000;
     display: block;
     transition: 0.3s;
@@ -41,18 +44,37 @@
   #navbar a:hover {
     color: #74bbf1;
   }
-  
-  /* Position and style the close button (top right corner) */
-  #navbar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+  /* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
   
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
+  #body {
     transition: margin-left .5s;
     padding: 20px;
   }
