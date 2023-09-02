@@ -2,7 +2,6 @@
 
 #navBut ,#darkMode {
     z-index: 10;
-    top: 1rem;
     position: fixed;
     display: block;
     padding: 0.3rem 0.5rem;
@@ -14,7 +13,8 @@
 
 
 #darkMode { 
-  left: 5rem;
+  right: 2rem;
+  bottom: 1rem;
 }
 #navBut { 
   left: 2rem;
@@ -33,6 +33,17 @@
     padding-top: 5rem; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  @media screen and (min-width: 12rem) and (max-width: 70rem) {
+    #navBut { 
+      top: 2rem;
+      left: 1rem;
+    }
+  
+    #navbar {
+      padding-top: 7rem; /* Place content 60px from the top */
+    }
+  
   }
   
   /* The navigation menu links */
