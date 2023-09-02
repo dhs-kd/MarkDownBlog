@@ -1,4 +1,3 @@
-
 // To open .md files and convert them to HTML files
 function open_md(entry) {
     fetch(`${entry}`)
@@ -7,11 +6,9 @@ function open_md(entry) {
             var converter = new showdown.Converter();
             var html = converter.makeHtml(t);
             document.getElementById("body").innerHTML = html;
-
         })
-        .catch((e) => console.error(e));
+        .catch((e) => console.error(e));   
 }
-
 
 // Rendering
 window.onload = function () {
@@ -66,9 +63,8 @@ function create_folders(list) {
 
 }
 
-
 function create_file(name , path) {
-    var html = `<li><a herf="#" onclick='open_md("${path}${name}")'>${name}</a></li>`
+    var html = `<li><a herf="#" class="file" onclick='open_md("${path}${name}")'>${name}</a></li>`
     return html ;
 }
 
