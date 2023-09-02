@@ -22,17 +22,16 @@
 
  /* The side navigation menu */
  #navbar {
-    height:1000%; /* 100% Full-height */
+    height:100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #fafafa; /* white*/
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
     padding-top: 5rem; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   @media screen and (min-width: 12rem) and (max-width: 70rem) {
     #navBut { 
@@ -52,7 +51,7 @@
     text-decoration: none;
     font-size: 1.3rem;
     display: block;
-    list-style: none;
+
     transition: 0.3s;
   }
   
@@ -63,10 +62,13 @@
 
   #navBarList { 
     list-style: none;
+    overflow-y: scroll;
     font-size: 1.3rem;
-
   }
 
+  li{
+    list-style: none;
+  }
 
   /* Style the caret/arrow */
 .caret {
