@@ -237,8 +237,13 @@ pre {
   }
 
   body {
+    max-width: 100%;
+  }
+
+  #body {
     max-width: 95%;
   }
+
 
   h1,
   .modest-h1 {
