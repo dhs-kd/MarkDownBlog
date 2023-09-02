@@ -3,7 +3,6 @@
 #navBut ,#darkMode {
     z-index: 10;
     top: 1rem;
-    left: 2%;
     position: fixed;
     display: block;
     padding: 0.3rem 0.5rem;
@@ -11,6 +10,14 @@
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 1.6rem;
+}
+
+
+#darkMode { 
+  left: 5rem;
+}
+#navBut { 
+  left: 2rem;
 }
 
  /* The side navigation menu */
@@ -88,6 +95,3 @@
     .sidenav a {font-size: 18px;}
   } 
 
-#darkMode { 
-  left: 5rem;
-}
