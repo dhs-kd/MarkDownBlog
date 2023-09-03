@@ -17,33 +17,24 @@
   bottom: 1rem;
 }
 #navBut { 
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
 }
 
  /* The side navigation menu */
  #navbar {
-    height:100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 0;
     left: 0;
     background-color: #fafafa; /* white*/
     overflow-y: auto;
-    padding-top: 5rem; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 100%;
   }
-  @media screen and (min-width: 12rem) and (max-width: 70rem) {
-    #navBut { 
-      top: 2rem;
-      left: 1rem;
-    }
-  
-    #navbar {
-      padding-top: 7rem; /* Place content 60px from the top */
-    }
-  
-  }
+
   
   /* The navigation menu links */
   #navbar a {
@@ -61,8 +52,7 @@
   }
 
   #navBarList { 
-    list-style: none;
-    overflow-y: scroll;
+    list-style: none; 
     font-size: 1.3rem;
   }
 
