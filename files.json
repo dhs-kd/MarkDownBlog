@@ -5,11 +5,12 @@
         {
             "name" : "Abu Al-Tabride", 
             "content" : [
-                "profile" ,
+                "profile.md" ,
                 { "name" :"Rust" , "content" :["file.md"] },
                 { "name" :"python" , "content" :["file.md"] },
-                { "name" :"web" , "content" :["file.md"] }
-            
+                { "name" :"web" , "content" :["file.md"] },
+                "الايثار.md"
+                
             ] 
             
         }, 
