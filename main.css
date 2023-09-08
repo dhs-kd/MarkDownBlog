@@ -33,6 +33,7 @@
     page-break-inside: avoid;
   }
 
+
   thead {
     display: table-header-group;
   }
@@ -213,7 +214,11 @@ h3 {
 
 blockquote {
   border-left: 8px solid #fafafa;
-  padding: 1rem;
+  border-right: 8px solid #b0d8f7;
+  padding: 0.5rem;
+  background-color: #eff1f3;
+  color: rgb(79, 79, 79);
+  border-radius: 12px;
 }
 
 pre,
