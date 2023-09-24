@@ -213,8 +213,7 @@ h3 {
 }
 
 blockquote {
-  border-left: 8px solid #fafafa;
-  border-right: 8px solid #b0d8f7;
+  border-left: 8px solid #aed0ef6b;
   padding: 0.5rem;
   background-color: #eff1f3;
   color: rgb(79, 79, 79);
